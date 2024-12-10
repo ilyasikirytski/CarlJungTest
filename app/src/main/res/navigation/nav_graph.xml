@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startScreenFragment">
+
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.example.myapplication.ui.StartScreenFragment"
+        android:label="fragment_start_screen"
+        tools:layout="@layout/fragment_start_screen">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/firstLevelSubconsciousFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstLevelSubconsciousFragment"
+        android:name="com.example.myapplication.ui.FirstLevelSubconsciousFragment"
+        tools:layout="@layout/fragment_first_level_subconscious">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/secondScreenMindLevelFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondScreenMindLevelFragment"
+        android:name="com.example.myapplication.ui.SecondLevelMindFragment"
+        android:label="fragment_second_screen_mind_level"
+        tools:layout="@layout/fragment_second_level_mind">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/thirdLevelFeelingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thirdLevelFeelingFragment"
+        android:name="com.example.myapplication.ui.ThirdLevelFeelingFragment"
+        android:label="fragment_third_level_feeling"
+        tools:layout="@layout/fragment_third_level_feeling">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/fourthLevelRootOfTheProblemFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fourthLevelRootOfTheProblemFragment"
+        android:name="com.example.myapplication.ui.FourthLevelRootOfTheProblemFragment"
+        android:label="fragment_fourth_level_root_of_the_problem"
+        tools:layout="@layout/fragment_fourth_level_root_of_the_problem">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/fifthLevelTheKeyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fifthLevelTheKeyFragment"
+        android:name="com.example.myapplication.ui.FifthLevelTheKeyFragment"
+        android:label="fragment_fifth_level_the_key"
+        tools:layout="@layout/fragment_fifth_level_the_key">
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/finalScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finalScreenFragment"
+        android:name="com.example.myapplication.ui.FinalScreenFragment"
+        android:label="fragment_final_screen"
+        tools:layout="@layout/fragment_final_screen">
+
+        <action
+            android:id="@+id/to_next_screen"
+            app:destination="@id/startScreenFragment" />
+        <action
+            android:id="@+id/action_to_result_tab_fragment"
+            app:destination="@id/resultTabFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultTabFragment"
+        android:name="com.example.myapplication.ui.ResultTabFragment"
+        android:label="fragment_result_tab"
+        tools:layout="@layout/fragment_result_tab" />
+</navigation>
